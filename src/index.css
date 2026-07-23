@@ -20,26 +20,30 @@
   }
 
   ::-webkit-scrollbar {
-    width: 6px;
-    height: 6px;
+    width: 8px;
+    height: 8px;
   }
 
   ::-webkit-scrollbar-track {
-    @apply bg-bg-primary;
+    @apply bg-bg-secondary;
   }
 
   ::-webkit-scrollbar-thumb {
-    @apply bg-brand-primary/50 rounded-full;
+    @apply bg-brand-primary/40 rounded-full;
   }
 
   ::-webkit-scrollbar-thumb:hover {
     @apply bg-brand-primary;
   }
 
-  input,
-  select,
-  textarea {
+  /* Touch-friendly inputs */
+  input, select, textarea {
     font-size: 16px !important;
+  }
+
+  /* Focus states for accessibility */
+  a:focus-visible, button:focus-visible, input:focus-visible {
+    @apply outline-2 outline-brand-primary outline-offset-2;
   }
 }
 
@@ -73,28 +77,68 @@
   }
 
   .btn-primary {
-    @apply inline-flex items-center justify-center gap-2 rounded-lg bg-cta-orange px-6 sm:px-8 py-3 sm:py-3.5 text-sm sm:text-base font-semibold text-white transition-all duration-150 hover:bg-cta-orange/90 hover:shadow-[0_4px_20px_rgba(242,153,74,0.35)] hover:scale-105 active:scale-95;
+    @apply inline-flex items-center justify-center gap-2 rounded-xl bg-cta-orange px-6 sm:px-8 py-3 sm:py-3.5 text-sm sm:text-base font-semibold text-white transition-all duration-200 hover:bg-cta-orange/90 hover:shadow-[0_8px_30px_rgba(242,153,74,0.35)] hover:-translate-y-0.5 active:scale-95;
   }
 
   .btn-secondary {
-    @apply inline-flex items-center justify-center gap-2 rounded-lg border-2 border-brand-primary bg-transparent px-6 sm:px-8 py-3 sm:py-3.5 text-sm sm:text-base font-semibold text-brand-primary transition-all duration-150 hover:bg-brand-primary hover:text-white hover:scale-105 active:scale-95;
+    @apply inline-flex items-center justify-center gap-2 rounded-xl border-2 border-brand-primary bg-transparent px-6 sm:px-8 py-3 sm:py-3.5 text-sm sm:text-base font-semibold text-brand-primary transition-all duration-200 hover:bg-brand-primary hover:text-white hover:shadow-[0_8px_30px_rgba(11,95,165,0.25)] hover:-translate-y-0.5 active:scale-95;
   }
 
-  .card-light {
-    @apply rounded-xl bg-white border border-border-light shadow-sm hover:shadow-[0_4px_24px_rgba(11,95,165,0.08)] transition-all duration-150;
+  .btn-outline {
+    @apply inline-flex items-center justify-center gap-2 rounded-xl border-2 border-white/30 bg-white/10 backdrop-blur-sm px-6 sm:px-8 py-3 sm:py-3.5 text-sm sm:text-base font-semibold text-white transition-all duration-200 hover:bg-white/20 hover:border-white/50 hover:-translate-y-0.5 active:scale-95;
+  }
+
+  .card {
+    @apply rounded-2xl bg-white border border-border-light shadow-sm hover:shadow-[0_8px_40px_rgba(11,95,165,0.08)] transition-all duration-200;
+  }
+
+  .touch-feedback {
+    @apply active:scale-95 transition-transform duration-150;
   }
 
   .section-badge {
     @apply inline-flex items-center gap-2 text-xs sm:text-sm font-semibold uppercase tracking-wider text-brand-primary;
   }
 
-  .touch-feedback {
-    @apply active:scale-95 transition-transform duration-150;
+  .section-title {
+    @apply heading-lg mt-3 sm:mt-4;
+  }
+
+  .section-subtitle {
+    @apply body-text mt-3 sm:mt-4 max-w-2xl mx-auto;
+  }
+
+  /* Lazy load fade-in */
+  .lazy-load {
+    opacity: 0;
+    transform: translateY(20px);
+    transition: all 0.6s ease-out;
+  }
+
+  .lazy-load.visible {
+    opacity: 1;
+    transform: translateY(0);
   }
 }
 
 @layer utilities {
   .text-balance {
     text-wrap: balance;
+  }
+
+  .bg-glass {
+    @apply bg-white/80 backdrop-blur-md border border-white/20;
+  }
+
+  .bg-glass-dark {
+    @apply bg-black/30 backdrop-blur-md border border-white/10;
+  }
+
+  .shadow-glow {
+    box-shadow: 0 0 60px rgba(11, 95, 165, 0.1);
+  }
+
+  .shadow-glow-orange {
+    box-shadow: 0 0 60px rgba(242, 153, 74, 0.15);
   }
 }
