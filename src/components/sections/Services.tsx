@@ -27,7 +27,7 @@ const services: Service[] = [
     description:
       "Von der ersten Skizze bis zur detaillierten Ausführungsplanung — wir begleiten Sie mit Fachkompetenz und Präzision.",
     icon: "PenTool",
-    href: "#",
+    href: "#quote",
     features: ["3D-Visualisierung", "Materialberatung", "Kostenoptimierung"],
     badge: "Kostenlos",
   },
@@ -37,7 +37,7 @@ const services: Service[] = [
     description:
       "Ästhetik trifft Funktion. Wir entwickeln maßgeschneiderte Lösungen, die Ihren Raum perfekt in Szene setzen.",
     icon: "PencilRuler",
-    href: "#",
+    href: "#quote",
     features: ["Individuelle Gestaltung", "Farbkonzepte", "Lichtplanung"],
     badge: "Maßgeschneidert",
   },
@@ -47,7 +47,7 @@ const services: Service[] = [
     description:
       "Präzise Ausführung mit höchster Sorgfalt. Unsere Monteure arbeiten nach den strengsten Qualitätsstandards.",
     icon: "Wrench",
-    href: "#",
+    href: "#quote",
     features: ["Sanitärinstallation", "Heizungsmontage", "Wartungsverträge"],
     badge: "Zertifiziert",
   },
@@ -57,7 +57,7 @@ const services: Service[] = [
     description:
       "Moderne Technik trifft auf bestehende Bausubstanz. Wir sanieren effizient und nachhaltig.",
     icon: "Building2",
-    href: "#",
+    href: "#quote",
     features: ["Badrenovierung", "Leitungsersatz", "Energieeffizienz"],
     badge: "Nachhaltig",
   },
@@ -67,7 +67,7 @@ const services: Service[] = [
     description:
       "Rund um die Uhr für Sie da. Bei Wasserschaden oder Heizungsausfall — wir sind innerhalb von 20 Minuten vor Ort.",
     icon: "Package",
-    href: "#",
+    href: "#emergency",
     features: ["Schnelle Reaktion", "20-min Garantie", "Festpreis"],
     badge: "24/7",
   },
@@ -94,42 +94,36 @@ const ServiceCard = ({
     <motion.div
       initial={{ opacity: 0, y: 30 }}
       whileInView={{ opacity: 1, y: 0 }}
-      transition={{ duration: 0.6, delay: index * 0.1 }}
-      viewport={{ once: true }}
-      whileHover={{
-        y: -6,
-        transition: { duration: 0.15, ease: "easeOut" },
-      }}
-      className="group relative rounded-xl bg-white border border-border-light p-4 sm:p-5 md:p-6 lg:p-8 shadow-sm transition-all duration-150 hover:border-brand-primary/30 hover:shadow-[0_8px_40px_rgba(11,95,165,0.08)]"
+      transition={{ duration: 0.5, delay: index * 0.06 }}
+      viewport={{ once: true, margin: "-50px" }}
+      whileHover={{ y: -4 }}
+      className="group card p-6 sm:p-8 hover:border-brand-primary/30"
     >
       {service.badge && (
-        <span className="absolute -top-2 -right-2 rounded-full bg-brand-primary px-2 sm:px-2.5 md:px-3 py-0.5 sm:py-1 text-[8px] sm:text-[9px] md:text-[10px] font-bold uppercase tracking-wider text-white shadow-[0_4px_12px_rgba(11,95,165,0.3)]">
+        <span className="absolute -top-2 -right-2 rounded-full bg-brand-primary px-2.5 sm:px-3 py-0.5 sm:py-1 text-[9px] sm:text-[10px] font-bold uppercase tracking-wider text-white shadow-[0_4px_12px_rgba(11,95,165,0.3)]">
           {service.badge}
         </span>
       )}
 
-      <div className="mb-3 sm:mb-4 inline-flex rounded-full bg-brand-primary/10 p-2 sm:p-2.5 md:p-3 text-brand-primary transition-all duration-150 group-hover:bg-brand-primary group-hover:text-white group-hover:shadow-[0_4px_20px_rgba(11,95,165,0.25)]">
-        <IconComponent
-          className="h-5 w-5 sm:h-6 sm:w-6 md:h-7 md:w-7"
-          strokeWidth={1.5}
-        />
+      <div className="relative inline-flex rounded-full bg-brand-primary/10 p-3 text-brand-primary transition-all duration-300 group-hover:bg-brand-primary group-hover:text-white group-hover:shadow-[0_4px_20px_rgba(11,95,165,0.25)]">
+        <IconComponent className="h-5 w-5 sm:h-6 sm:w-6" strokeWidth={1.5} />
       </div>
 
-      <h3 className="mb-1.5 sm:mb-2 text-base sm:text-lg md:text-xl font-semibold text-text-heading">
+      <h3 className="mt-4 text-lg sm:text-xl font-semibold text-text-heading">
         {service.title}
       </h3>
 
-      <p className="mb-3 sm:mb-4 text-xs sm:text-sm leading-relaxed text-text-body">
+      <p className="mt-2 text-sm leading-relaxed text-text-body">
         {service.description}
       </p>
 
-      <ul className="mb-4 sm:mb-5 md:mb-6 space-y-1 sm:space-y-1.5">
+      <ul className="mt-4 space-y-1.5">
         {service.features.map((feature, i) => (
           <li
             key={i}
-            className="flex items-center gap-1.5 sm:gap-2 text-[10px] sm:text-xs text-text-body/60"
+            className="flex items-center gap-2 text-sm text-text-body/60"
           >
-            <Sparkles className="h-2.5 w-2.5 sm:h-3 sm:w-3 text-brand-primary/60 flex-shrink-0" />
+            <Sparkles className="h-3 w-3 text-brand-primary/60 flex-shrink-0" />
             <span>{feature}</span>
           </li>
         ))}
@@ -137,10 +131,10 @@ const ServiceCard = ({
 
       <a
         href={service.href}
-        className="inline-flex items-center gap-1 text-xs sm:text-sm font-semibold text-brand-primary transition-all duration-150 group-hover:gap-2 group-hover:text-brand-secondary"
+        className="mt-5 inline-flex items-center gap-1.5 text-sm font-semibold text-brand-primary transition-all duration-200 group-hover:gap-2.5 group-hover:text-brand-secondary"
       >
-        Mehr erfahren
-        <ArrowRight className="h-3 w-3 sm:h-3.5 sm:w-3.5 transition-transform duration-150 group-hover:translate-x-1" />
+        Angebot anfragen
+        <ArrowRight className="h-3.5 w-3.5 transition-transform duration-200 group-hover:translate-x-1" />
       </a>
     </motion.div>
   );
@@ -148,17 +142,14 @@ const ServiceCard = ({
 
 const Services = () => {
   return (
-    <section
-      id="services"
-      className="section-spacing bg-bg-primary overflow-hidden"
-    >
+    <section id="services" className="section-spacing bg-bg-primary">
       <div className="container-custom">
         <motion.div
           initial={{ opacity: 0, y: 20 }}
           whileInView={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.6 }}
+          transition={{ duration: 0.5 }}
           viewport={{ once: true }}
-          className="mb-10 sm:mb-12 md:mb-16 text-center"
+          className="text-center"
         >
           <span className="section-badge">
             <span className="h-px w-6 bg-brand-primary/30" />
@@ -174,7 +165,7 @@ const Services = () => {
           </p>
         </motion.div>
 
-        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-5 gap-4 sm:gap-5 md:gap-6">
+        <div className="mt-12 grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-5 gap-5 sm:gap-6">
           {services.map((service, index) => (
             <ServiceCard key={service.id} service={service} index={index} />
           ))}
@@ -183,18 +174,18 @@ const Services = () => {
         <motion.div
           initial={{ opacity: 0, y: 20 }}
           whileInView={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.6, delay: 0.4 }}
+          transition={{ duration: 0.5, delay: 0.3 }}
           viewport={{ once: true }}
-          className="mt-10 sm:mt-12 md:mt-16 text-center"
+          className="mt-12 text-center"
         >
-          <div className="inline-flex flex-wrap items-center justify-center gap-3 sm:gap-4 rounded-xl bg-white border border-border-light px-4 sm:px-5 md:px-6 py-2 sm:py-2.5 md:py-3 shadow-sm">
-            <span className="flex items-center gap-1.5 text-[10px] sm:text-xs font-medium uppercase tracking-widest text-text-body/60">
-              <Building2 className="h-3 w-3 text-brand-primary/60" />
+          <div className="inline-flex flex-wrap items-center justify-center gap-3 sm:gap-4 rounded-2xl bg-white border border-border-light px-5 sm:px-6 py-3 shadow-sm">
+            <span className="flex items-center gap-2 text-xs sm:text-sm font-medium text-text-body/60">
+              <Building2 className="h-4 w-4 text-brand-primary/60" />
               Über 500 realisierte Projekte
             </span>
-            <span className="h-3 sm:h-4 w-px bg-border-light" />
-            <span className="flex items-center gap-1.5 text-[10px] sm:text-xs font-medium uppercase tracking-widest text-text-body/60">
-              <Star className="h-3 w-3 text-brand-primary/60" />
+            <span className="h-4 w-px bg-border-light" />
+            <span className="flex items-center gap-2 text-xs sm:text-sm font-medium text-text-body/60">
+              <Star className="h-4 w-4 text-brand-primary/60" />
               4.9/5 · 200+ Bewertungen
             </span>
           </div>
