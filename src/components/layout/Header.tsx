@@ -1,6 +1,6 @@
 import { useState, useEffect } from "react";
 import { motion, AnimatePresence } from "framer-motion";
-import { Phone, Menu, X, PhoneCall } from "lucide-react";
+import { Menu, X, PhoneCall } from "lucide-react";
 import { cn } from "@/utils/cn";
 
 const Header = () => {
@@ -79,19 +79,11 @@ const Header = () => {
             ))}
           </nav>
 
-          {/* Right side: Phone + CTA */}
+          {/* Right side: CTA Button Only */}
           <div className="flex items-center gap-3 sm:gap-4">
             <a
               href="tel:+436602626722"
-              className="hidden md:flex items-center gap-2 text-sm font-bold text-cta-orange hover:text-cta-orange/80 transition-colors duration-150"
-            >
-              <Phone className="h-4 w-4" />
-              <span>0660 26 26 722</span>
-            </a>
-
-            <a
-              href="tel:+436602626722"
-              className="btn-primary text-sm px-4 sm:px-6 py-2.5 sm:py-3 hidden md:inline-flex"
+              className="btn-primary text-sm px-4 sm:px-6 py-2.5 sm:py-3 inline-flex"
             >
               <PhoneCall className="h-4 w-4" />
               <span className="hidden sm:inline">Jetzt anrufen</span>
