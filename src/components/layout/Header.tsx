@@ -46,12 +46,12 @@ const Header = () => {
           >
             <div className="relative">
               <img
-                src="/images/logo.png"
+                src="/images/Logo-1.png"
                 alt="B.O INSTALLATIONEN"
-                className="h-10 sm:h-12 w-auto object-contain transition-all duration-300 group-hover:scale-105"
-                style={{ maxHeight: "48px" }}
+                className="h-10 sm:h-12 md:h-14 w-auto object-contain transition-all duration-300 group-hover:scale-105"
+                style={{ maxHeight: "56px" }}
                 onError={(e) => {
-                  e.currentTarget.style.display = "none";
+                  e.currentTarget.src = "/images/logo.png";
                 }}
               />
             </div>
