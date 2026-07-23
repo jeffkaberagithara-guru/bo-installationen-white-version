@@ -101,12 +101,12 @@ const Innovation = () => {
                 {item.description}
               </p>
 
-              <div className="mt-3 sm:mt-4 flex items-center gap-2 sm:gap-3 rounded-lg bg-bg-primary/50 border border-border-light px-2.5 sm:px-3 py-1.5 sm:py-2">
+              <div className="mt-3 sm:mt-4 flex items-center gap-2 sm:gap-3 rounded-lg bg-bg-primary border border-border-light px-2.5 sm:px-3 py-1.5 sm:py-2">
                 <span className="text-base sm:text-lg font-bold text-brand-primary">
                   {item.stat}
                 </span>
                 <span className="h-3 sm:h-4 w-px bg-border-light" />
-                <span className="text-[10px] sm:text-xs text-text-body/40">
+                <span className="text-[10px] sm:text-xs text-text-body/50">
                   {item.statLabel}
                 </span>
               </div>
@@ -123,18 +123,18 @@ const Innovation = () => {
           viewport={{ once: true }}
           className="mt-10 sm:mt-12 md:mt-16 flex flex-col items-center gap-3 sm:gap-4"
         >
-          <div className="flex items-center gap-4 sm:gap-6 text-[10px] sm:text-xs uppercase tracking-widest text-text-body/30">
+          <div className="flex items-center gap-4 sm:gap-6 text-[10px] sm:text-xs font-medium uppercase tracking-widest text-text-body/40">
             <span className="h-px w-10 sm:w-12 md:w-16 bg-border-light" />
             <span>Präzision · Sicherheit · Innovation</span>
             <span className="h-px w-10 sm:w-12 md:w-16 bg-border-light" />
           </div>
 
-          <div className="inline-flex items-center gap-2 sm:gap-3 rounded-full border border-brand-primary/10 bg-white/50 px-4 sm:px-5 md:px-6 py-1.5 sm:py-2 shadow-sm">
+          <div className="inline-flex items-center gap-2 sm:gap-3 rounded-full border border-brand-primary/10 bg-white px-4 sm:px-5 md:px-6 py-1.5 sm:py-2 shadow-sm">
             <span className="relative flex h-1.5 w-1.5 sm:h-2 sm:w-2">
               <span className="absolute inline-flex h-full w-full animate-ping rounded-full bg-brand-primary/60" />
               <span className="relative inline-flex h-1.5 w-1.5 sm:h-2 sm:w-2 rounded-full bg-brand-primary" />
             </span>
-            <span className="text-[10px] sm:text-xs font-medium text-brand-primary/70">
+            <span className="text-[10px] sm:text-xs font-semibold text-brand-primary/70">
               B.O INSTALLATIONEN · Seit 2009
             </span>
           </div>
