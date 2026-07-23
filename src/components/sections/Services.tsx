@@ -129,7 +129,7 @@ const ServiceCard = ({
             key={i}
             className="flex items-center gap-1.5 sm:gap-2 text-[10px] sm:text-xs text-text-body/60"
           >
-            <Sparkles className="h-2.5 w-2.5 sm:h-3 sm:w-3 text-brand-primary/60" />
+            <Sparkles className="h-2.5 w-2.5 sm:h-3 sm:w-3 text-brand-primary/60 flex-shrink-0" />
             <span>{feature}</span>
           </li>
         ))}
@@ -137,7 +137,7 @@ const ServiceCard = ({
 
       <a
         href={service.href}
-        className="inline-flex items-center gap-1 text-xs sm:text-sm font-medium text-brand-primary transition-all duration-150 group-hover:gap-2 group-hover:text-brand-secondary"
+        className="inline-flex items-center gap-1 text-xs sm:text-sm font-semibold text-brand-primary transition-all duration-150 group-hover:gap-2 group-hover:text-brand-secondary"
       >
         Mehr erfahren
         <ArrowRight className="h-3 w-3 sm:h-3.5 sm:w-3.5 transition-transform duration-150 group-hover:translate-x-1" />
