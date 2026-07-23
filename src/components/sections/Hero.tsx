@@ -35,44 +35,34 @@ const Hero = () => {
       ref={ref}
       className="relative min-h-screen w-full overflow-hidden pt-14 sm:pt-16 md:pt-20 bg-bg-primary"
     >
-      {/* Decorative background elements */}
-      <div className="absolute inset-0 opacity-30 pointer-events-none">
+      {/* Decorative background elements - subtle */}
+      <div className="absolute inset-0 opacity-20 pointer-events-none">
         <div className="absolute top-0 right-0 h-64 w-64 sm:h-96 sm:w-96 rounded-full bg-brand-primary/5 blur-3xl" />
         <div className="absolute bottom-0 left-0 h-64 w-64 sm:h-96 sm:w-96 rounded-full bg-brand-secondary/5 blur-3xl" />
-        <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 h-[500px] w-[500px] rounded-full bg-brand-primary/3 blur-3xl" />
       </div>
-
-      {/* Subtle grid pattern */}
-      <div
-        className="absolute inset-0 opacity-[0.02] pointer-events-none"
-        style={{
-          backgroundImage: `radial-gradient(circle at 1px 1px, #0B5FA5 1px, transparent 1px)`,
-          backgroundSize: "40px 40px",
-        }}
-      />
 
       {/* Content */}
       <motion.div
         style={{ opacity, scale, y }}
         className="relative z-10 flex min-h-[calc(100vh-3.5rem)] sm:min-h-[calc(100vh-4rem)] md:min-h-[calc(100vh-5rem)] flex-col items-center justify-center px-4 sm:px-6 lg:px-8 text-center"
       >
-        {/* Brand Badge */}
+        {/* Brand Badge - Visible */}
         <motion.div
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.8, ease: "easeOut" }}
-          className="mb-4 sm:mb-6 md:mb-8 inline-flex items-center gap-1.5 sm:gap-2 rounded-full border border-brand-primary/20 bg-white/50 px-3 sm:px-4 md:px-5 py-1 sm:py-1.5 md:py-2 backdrop-blur-sm shadow-[0_0_40px_rgba(11,95,165,0.05)]"
+          className="mb-4 sm:mb-6 md:mb-8 inline-flex items-center gap-1.5 sm:gap-2 rounded-full bg-white border border-brand-primary/20 px-3 sm:px-4 md:px-5 py-1 sm:py-1.5 md:py-2 shadow-sm"
         >
           <span className="relative flex h-1.5 w-1.5 sm:h-2 sm:w-2">
             <span className="absolute inline-flex h-full w-full animate-ping rounded-full bg-brand-primary/60" />
             <span className="relative inline-flex h-1.5 w-1.5 sm:h-2 sm:w-2 rounded-full bg-brand-primary" />
           </span>
-          <span className="text-[9px] sm:text-[10px] md:text-xs font-medium uppercase tracking-widest text-brand-primary">
+          <span className="text-[9px] sm:text-[10px] md:text-xs font-semibold uppercase tracking-widest text-brand-primary">
             Wien · 24/7 Service · Zertifiziert
           </span>
         </motion.div>
 
-        {/* Main Headline */}
+        {/* Main Headline - High contrast */}
         <motion.h1
           initial={{ opacity: 0, y: 30 }}
           animate={{ opacity: 1, y: 0 }}
@@ -83,7 +73,7 @@ const Hero = () => {
           <span className="block text-brand-primary">IN JEDEM DETAIL</span>
         </motion.h1>
 
-        {/* Sub-headline */}
+        {/* Sub-headline - Visible */}
         <motion.p
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
@@ -94,7 +84,7 @@ const Hero = () => {
           Ihr Partner für präzise Gebäudetechnik in Wien.
         </motion.p>
 
-        {/* Trust Indicators */}
+        {/* Trust Indicators - White cards for visibility */}
         <motion.div
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
@@ -123,7 +113,7 @@ const Hero = () => {
           ))}
         </motion.div>
 
-        {/* CTA Buttons */}
+        {/* CTA Buttons - All visible */}
         <motion.div
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
@@ -134,7 +124,7 @@ const Hero = () => {
             href="tel:+436602626722"
             className="btn-primary text-base px-8 sm:px-10 py-3.5 sm:py-4"
           >
-            <Phone className="h-4 w-4 sm:h-5 sm:w-5 animate-pulse" />
+            <Phone className="h-4 w-4 sm:h-5 sm:w-5" />
             <span className="whitespace-nowrap">Notdienst: 0660 26 26 722</span>
           </a>
 
@@ -148,30 +138,30 @@ const Hero = () => {
 
           <a
             href="#quote"
-            className="inline-flex items-center justify-center gap-2 rounded-lg border border-border-light bg-white px-8 sm:px-10 py-3.5 sm:py-4 text-base font-semibold text-text-heading transition-all duration-150 hover:border-brand-primary/30 hover:bg-brand-primary/5 hover:scale-105 active:scale-95 touch-feedback"
+            className="inline-flex items-center justify-center gap-2 rounded-lg border-2 border-border-light bg-white px-8 sm:px-10 py-3.5 sm:py-4 text-base font-semibold text-text-heading transition-all duration-150 hover:border-brand-primary/30 hover:bg-brand-primary/5 hover:scale-105 active:scale-95 touch-feedback"
           >
             <Calendar className="h-3.5 w-3.5 sm:h-4 sm:w-4 text-brand-primary" />
             <span>Angebot anfragen</span>
           </a>
         </motion.div>
 
-        {/* Trust Badge Row */}
+        {/* Trust Badge Row - Visible */}
         <motion.div
           initial={{ opacity: 0 }}
           animate={{ opacity: 1 }}
           transition={{ duration: 0.8, delay: 0.6, ease: "easeOut" }}
-          className="mt-8 sm:mt-10 md:mt-14 flex flex-wrap items-center justify-center gap-4 sm:gap-6 md:gap-8 text-[9px] sm:text-[10px] md:text-xs uppercase tracking-widest text-text-body/50"
+          className="mt-8 sm:mt-10 md:mt-14 flex flex-wrap items-center justify-center gap-4 sm:gap-6 md:gap-8 text-[9px] sm:text-[10px] md:text-xs font-medium uppercase tracking-widest text-text-body/60"
         >
           <span className="flex items-center gap-1.5 sm:gap-2">
-            <BadgeCheck className="h-2.5 w-2.5 sm:h-3 sm:w-3 text-brand-primary/60" />
+            <BadgeCheck className="h-2.5 w-2.5 sm:h-3 sm:w-3 text-brand-primary" />
             15+ Jahre Erfahrung
           </span>
           <span className="flex items-center gap-1.5 sm:gap-2">
-            <Shield className="h-2.5 w-2.5 sm:h-3 sm:w-3 text-brand-primary/60" />
+            <Shield className="h-2.5 w-2.5 sm:h-3 sm:w-3 text-brand-primary" />
             Zertifizierte Qualität
           </span>
           <span className="flex items-center gap-1.5 sm:gap-2">
-            <Star className="h-2.5 w-2.5 sm:h-3 sm:w-3 text-brand-primary/60" />
+            <Star className="h-2.5 w-2.5 sm:h-3 sm:w-3 text-brand-primary" />
             4.9/5 · 200+ Bewertungen
           </span>
         </motion.div>
@@ -191,10 +181,10 @@ const Hero = () => {
           onClick={scrollToServices}
         >
           <div className="flex flex-col items-center gap-1">
-            <span className="text-[8px] sm:text-[9px] md:text-[10px] uppercase tracking-widest text-text-body/30">
+            <span className="text-[8px] sm:text-[9px] md:text-[10px] uppercase tracking-widest text-text-body/40">
               Scroll
             </span>
-            <ArrowDown className="h-4 w-4 sm:h-5 sm:w-5 text-text-body/30 hover:text-text-body/60 transition-colors" />
+            <ArrowDown className="h-4 w-4 sm:h-5 sm:w-5 text-text-body/40 hover:text-text-body/70 transition-colors" />
           </div>
         </motion.div>
       </motion.div>
