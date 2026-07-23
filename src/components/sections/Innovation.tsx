@@ -51,14 +51,14 @@ const innovationData: InnovationItem[] = [
 
 const Innovation = () => {
   return (
-    <section className="section-spacing bg-bg-secondary overflow-hidden">
+    <section className="section-spacing bg-bg-secondary">
       <div className="container-custom">
         <motion.div
           initial={{ opacity: 0, y: 20 }}
           whileInView={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.6 }}
+          transition={{ duration: 0.5 }}
           viewport={{ once: true }}
-          className="mb-10 sm:mb-12 md:mb-16 text-center"
+          className="text-center"
         >
           <span className="section-badge">
             <span className="h-px w-6 bg-brand-primary/30" />
@@ -75,66 +75,61 @@ const Innovation = () => {
           </p>
         </motion.div>
 
-        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4 sm:gap-5 md:gap-6 max-w-6xl mx-auto">
+        <div className="mt-12 grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-5">
           {innovationData.map((item, index) => (
             <motion.div
               key={item.id}
               initial={{ opacity: 0, y: 30 }}
               whileInView={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.6, delay: index * 0.1 }}
+              transition={{ duration: 0.5, delay: index * 0.06 }}
               viewport={{ once: true }}
-              whileHover={{
-                y: -6,
-                transition: { duration: 0.15, ease: "easeOut" },
-              }}
-              className="group relative flex flex-col rounded-xl bg-white border border-border-light p-4 sm:p-5 md:p-6 shadow-sm transition-all duration-150 hover:border-brand-primary/30 hover:shadow-[0_8px_40px_rgba(11,95,165,0.08)]"
+              whileHover={{ y: -4 }}
+              className="group card p-6 hover:border-brand-primary/30"
             >
-              <div className="mb-3 sm:mb-4 inline-flex w-fit rounded-full bg-brand-primary/10 p-2 sm:p-2.5 md:p-3 text-brand-primary transition-all duration-150 group-hover:bg-brand-primary group-hover:text-white group-hover:shadow-[0_4px_20px_rgba(11,95,165,0.25)]">
+              <div className="inline-flex rounded-full bg-brand-primary/10 p-3 text-brand-primary transition-all duration-300 group-hover:bg-brand-primary group-hover:text-white group-hover:shadow-[0_4px_20px_rgba(11,95,165,0.25)]">
                 {item.icon}
               </div>
 
-              <h3 className="mb-1.5 sm:mb-2 text-base sm:text-lg md:text-xl font-semibold text-text-heading">
+              <h3 className="mt-4 text-lg font-semibold text-text-heading">
                 {item.title}
               </h3>
 
-              <p className="flex-1 text-xs sm:text-sm leading-relaxed text-text-body">
+              <p className="mt-2 text-sm leading-relaxed text-text-body">
                 {item.description}
               </p>
 
-              <div className="mt-3 sm:mt-4 flex items-center gap-2 sm:gap-3 rounded-lg bg-bg-primary border border-border-light px-2.5 sm:px-3 py-1.5 sm:py-2">
-                <span className="text-base sm:text-lg font-bold text-brand-primary">
+              <div className="mt-4 flex items-center gap-3 rounded-xl bg-bg-primary/50 border border-border-light px-3 py-2">
+                <span className="text-base font-bold text-brand-primary">
                   {item.stat}
                 </span>
-                <span className="h-3 sm:h-4 w-px bg-border-light" />
-                <span className="text-[10px] sm:text-xs text-text-body/50">
+                <span className="h-4 w-px bg-border-light" />
+                <span className="text-xs text-text-body/50">
                   {item.statLabel}
                 </span>
               </div>
-
-              <div className="mt-3 sm:mt-4 h-px w-8 sm:w-10 md:w-12 bg-brand-primary/30 transition-all duration-150 group-hover:w-12 sm:group-hover:w-14 md:group-hover:w-16" />
             </motion.div>
           ))}
         </div>
 
         <motion.div
-          initial={{ opacity: 0, scale: 0.9 }}
-          whileInView={{ opacity: 1, scale: 1 }}
-          transition={{ duration: 0.8, delay: 0.4 }}
+          initial={{ opacity: 0 }}
+          whileInView={{ opacity: 1 }}
+          transition={{ duration: 0.5, delay: 0.3 }}
           viewport={{ once: true }}
-          className="mt-10 sm:mt-12 md:mt-16 flex flex-col items-center gap-3 sm:gap-4"
+          className="mt-12 flex flex-col items-center gap-4"
         >
-          <div className="flex items-center gap-4 sm:gap-6 text-[10px] sm:text-xs font-medium uppercase tracking-widest text-text-body/40">
-            <span className="h-px w-10 sm:w-12 md:w-16 bg-border-light" />
+          <div className="flex items-center gap-4 text-xs font-medium uppercase tracking-widest text-text-body/40">
+            <span className="h-px w-10 bg-border-light" />
             <span>Präzision · Sicherheit · Innovation</span>
-            <span className="h-px w-10 sm:w-12 md:w-16 bg-border-light" />
+            <span className="h-px w-10 bg-border-light" />
           </div>
 
-          <div className="inline-flex items-center gap-2 sm:gap-3 rounded-full border border-brand-primary/10 bg-white px-4 sm:px-5 md:px-6 py-1.5 sm:py-2 shadow-sm">
-            <span className="relative flex h-1.5 w-1.5 sm:h-2 sm:w-2">
+          <div className="inline-flex items-center gap-3 rounded-full border border-brand-primary/10 bg-white px-5 py-2 shadow-sm">
+            <span className="relative flex h-2 w-2">
               <span className="absolute inline-flex h-full w-full animate-ping rounded-full bg-brand-primary/60" />
-              <span className="relative inline-flex h-1.5 w-1.5 sm:h-2 sm:w-2 rounded-full bg-brand-primary" />
+              <span className="relative inline-flex h-2 w-2 rounded-full bg-brand-primary" />
             </span>
-            <span className="text-[10px] sm:text-xs font-semibold text-brand-primary/70">
+            <span className="text-xs font-semibold text-brand-primary/70">
               B.O INSTALLATIONEN · Seit 2009
             </span>
           </div>
