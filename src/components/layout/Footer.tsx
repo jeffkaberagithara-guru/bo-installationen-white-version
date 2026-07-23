@@ -41,12 +41,12 @@ const Footer = () => {
             <div className="flex items-center gap-2 sm:gap-3">
               <div className="relative">
                 <img
-                  src="/images/Logo-1.png"
+                  src="/images/logo.png"
                   alt="B.O INSTALLATIONEN"
                   className="h-10 sm:h-12 md:h-14 w-auto object-contain transition-all duration-300 hover:scale-105"
                   style={{ maxHeight: "56px" }}
                   onError={(e) => {
-                    e.currentTarget.src = "/images/logo.png";
+                    e.currentTarget.style.display = "none";
                   }}
                 />
               </div>
